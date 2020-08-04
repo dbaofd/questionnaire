@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @Entity
-@Table(name="q_answer")
+@Table(name = "q_answer")
 public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,12 +22,12 @@ public class Answer {
     @Column(nullable = false, name = "questionnaireId")
     private Long questionnaireId;
 
-    @Column(nullable = false, name = "selectedOptions",length=700)
+    @Column(nullable = false, name = "selectedOptions", length = 700)
     @Convert(converter = MapToStringConverter.class)
-    private Map<String,String> selectedOptions;
+    private Map<String, String> selectedOptions;
 
     @Column(name = "submittedTime")
-    private LocalDateTime submittedTime=LocalDateTime.now();
+    private LocalDateTime submittedTime = LocalDateTime.now();
 
     public Long getAnswerId() {
         return answerId;

@@ -5,7 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface AnswerRespository extends JpaRepository<Answer,Long> {
+public interface AnswerRespository extends JpaRepository<Answer, Long> {
     public List<Answer> findAnswersByUserId(String userId);
+
     public List<Answer> findAnswersByUserIdAndQuestionnaireId(String userId, Long questionnaireId);
 }

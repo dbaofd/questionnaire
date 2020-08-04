@@ -15,13 +15,13 @@ public class QuestionController {
     @Autowired
     private QuestionRespository questionRespository;
 
-    @GetMapping(value="/questions")
-    public List<Question> questionList(){
+    @GetMapping(value = "/questions")
+    public List<Question> questionList() {
         return questionRespository.findAll();
     }
 
-    @GetMapping(value="/questions/{qid}")
-    public List<Question> getQuestionsByQuestionnaireId(@PathVariable(value="qid") Long qid){
+    @GetMapping(value = "/questions/{qid}")
+    public List<Question> getQuestionsByQuestionnaireId(@PathVariable(value = "qid") Long qid) {
         return questionRespository.findQuestionsByQuestionnaireIdOrderByQuestionId(qid);
     }
 }

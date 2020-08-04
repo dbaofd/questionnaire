@@ -2,11 +2,9 @@ package au.edu.uq.rcc.questionnaire.Controller;
 
 import au.edu.uq.rcc.questionnaire.Entity.Answer;
 import au.edu.uq.rcc.questionnaire.Respository.AnswerRespository;
-import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,8 +46,8 @@ public class AnswerController {
 
     @GetMapping(value = "/answers/{uid}/{qid}")
     public List<Answer> findAnswersByUserId(@PathVariable(value = "uid") String uid,
-                                            @PathVariable(value="qid") Long qid) {
-        return answerRespository.findAnswersByUserIdAndQuestionnaireId(uid,qid);
+                                            @PathVariable(value = "qid") Long qid) {
+        return answerRespository.findAnswersByUserIdAndQuestionnaireId(uid, qid);
     }
 
 
