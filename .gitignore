@@ -27,3 +27,5 @@
 
 mvnw
 mvnw.cmd
+out/
+.DS_Store
